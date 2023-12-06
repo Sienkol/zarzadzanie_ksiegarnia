@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "268903838675",
+    "project_id": "zarzadzanie-ksiegarnia",
+    "storage_bucket": "zarzadzanie-ksiegarnia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268903838675:android:3843152f63f58e4ccdb526",
+        "android_client_info": {
+          "package_name": "com.zadwyk.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHI2VFBq2L4WuiD8g8ljwAq6n4uqWWdIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
