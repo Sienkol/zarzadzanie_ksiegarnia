@@ -6,17 +6,21 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
+import android.view.View
+import android.content.Intent
+
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var db: FirebaseFirestore
     private lateinit var dataTextView: TextView
+    private lateinit var mainView: View
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        FirebaseApp.initializeApp(this)
+        FirebaseApp.initializeApp(this) //inicjalizacja Firebase
         db = FirebaseFirestore.getInstance()
         val docRef = db.collection("/ksiegarnie/ksiegarnia gdansk/książki")
 
@@ -38,5 +42,28 @@ class MainActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.e("Firestore", "Błąd pobierania danych: $exception")
             }
+    }
+    fun onAddBookButtonClick(view: View) {
+        val intent: Intent = Intent(this, ksiazki_dodaj::class.java)
+        startActivity(intent)
+    }
+
+
+    fun onRemoveBookButtonClick(view: View) {
+        val intent: Intent = Intent(this, ksiazki_usun::class.java)
+        startActivity(intent)
+    }
+
+    fun onWorkersButtonClick(view: View) {
+        val intent: Intent = Intent(this, pracownicy::class.java)
+        startActivity(intent)
+    }
+
+    fun onAuthorsButtonClick(view: View) {
+        val intent: Intent = Intent(this, Info::class.java)
+        startActivity(intent)
+    }
+    fun onExitButtonClick(view: View) {
+        finish()
     }
 }

@@ -1,19 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    android:padding="16dp">
 
-    <ScrollView
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zarządzanie Księgarnią"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp" />
+
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleTextView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="105dp"
+        android:columnCount="1"
+        android:rowCount="6">
 
-        <TextView
-            android:id="@+id/dataTextView"
-            android:layout_width="wrap_content"
+        <!-- Kafelek 1: Przelicz kg na lbs -->
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="128dp"
-            android:textSize="22sp" />
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:onClick="onAddBookButtonClick"
+            android:padding="30dp"
+            android:text="Dodaj Książki"
+            android:textColor="#FFFFFF" />
 
-    </ScrollView>
+        <!-- Kafelek 2: Przelicz lbs na kg -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:onClick="onRemoveBookButtonClick"
+            android:padding="30dp"
+            android:text="Usuń Książki"
+            android:textColor="#FFFFFF" />
 
+        <!-- Kafelek 3: Inne przeliczenia -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:onClick="onWorkersButtonClick"
+            android:padding="30dp"
+            android:text="Zarządzaj Pracownikami"
+            android:textColor="#FFFFFF" />
+
+
+        <!-- Kafelek 4: Dane Autorów -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:onClick="onAuthorsButtonClick"
+            android:padding="30dp"
+            android:text="Informacje"
+            android:textColor="#FFFFFF" />
+
+        <Switch
+            android:layout_width="113dp"
+            android:layout_height="59dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:onClick="onColorChangeButtonClick"
+            android:padding="30dp"
+            android:text="Zmień kolor tła"
+            android:textColor="#FFFFFF" />
+
+        <!-- Kafelek 5: Wyjście -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:onClick="onExitButtonClick"
+            android:padding="30dp"
+            android:text="Wyjście"
+            android:textColor="#FFFFFF" />
+
+    </GridLayout>
 </RelativeLayout>

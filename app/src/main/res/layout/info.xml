@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Info">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/powrot2"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="Wróć" />
+
+        <Button
+            android:id="@+id/tło"
+            android:onClick="onColorChangeButtonClick"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="Zmień kolor tła" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="Imie i nazwisko studentów: \nPaweł Sienkiewicz\nMateusz Popiel" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Numer studentów: \n185698\n185807"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Grupa na studiach: 2b"
+        android:textSize="24sp" />
+
+    <TextView
+
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="JAK KORZYSTAĆ Z APLIKACJI:"
+        android:textSize="28sp" />
+    <TextView
+
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="388dp"
+        android:text="Należy klinąć w odpowiednie okno do przeliczania wartości. Tam mamy pole do wpisania wartości którą chcemy przeliczyć z jednej jednostki na drugą. Aby uzyskać wynik klikamy przycisk oblicz. W przypadku gdy chcemy odwrotnie przeliczyć wartość, klikamy przycisk zmień."
+        android:textSize="24sp" />
+
+
+</LinearLayout>
