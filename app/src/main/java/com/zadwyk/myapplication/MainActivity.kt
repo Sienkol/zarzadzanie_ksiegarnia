@@ -8,6 +8,10 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
 import android.view.View
 import android.content.Intent
+import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.content.Context
+import android.view.LayoutInflater
 
 
 
@@ -20,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        FirebaseApp.initializeApp(this) //inicjalizacja Firebase
+      /*  FirebaseApp.initializeApp(this) //inicjalizacja Firebase
         db = FirebaseFirestore.getInstance()
         val docRef = db.collection("/ksiegarnie/ksiegarnia gdansk/książki")
 
@@ -42,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.e("Firestore", "Błąd pobierania danych: $exception")
             }
-    }
+    }*/
     fun onAddBookButtonClick(view: View) {
         val intent: Intent = Intent(this, ksiazki_dodaj::class.java)
         startActivity(intent)
@@ -66,4 +70,5 @@ class MainActivity : AppCompatActivity() {
     fun onExitButtonClick(view: View) {
         finish()
     }
+}
 }
