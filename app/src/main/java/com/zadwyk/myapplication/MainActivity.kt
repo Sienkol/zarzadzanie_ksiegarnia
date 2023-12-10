@@ -1,18 +1,12 @@
 package com.zadwyk.myapplication
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
 import android.view.View
 import android.content.Intent
-import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.content.Context
-import android.view.LayoutInflater
-
+import com.google.firebase.FirebaseApp
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,12 +17,13 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-      /*  FirebaseApp.initializeApp(this) //inicjalizacja Firebase
+        FirebaseApp.initializeApp(this) //inicjalizacja Firebase
         db = FirebaseFirestore.getInstance()
         val docRef = db.collection("/ksiegarnie/ksiegarnia gdansk/książki")
 
-        dataTextView = findViewById(R.id.dataTextView)
+
+    }
+      /*
 
         docRef.get()
             .addOnSuccessListener { documents ->
@@ -48,18 +43,18 @@ class MainActivity : AppCompatActivity() {
             }
     }*/
     fun onAddBookButtonClick(view: View) {
-        val intent: Intent = Intent(this, ksiazki_dodaj::class.java)
+        val intent: Intent = Intent(this, Ksiazki_dodaj::class.java)
         startActivity(intent)
     }
 
 
     fun onRemoveBookButtonClick(view: View) {
-        val intent: Intent = Intent(this, ksiazki_usun::class.java)
+        val intent: Intent = Intent(this, Ksiazki_usun::class.java)
         startActivity(intent)
     }
 
     fun onWorkersButtonClick(view: View) {
-        val intent: Intent = Intent(this, pracownicy::class.java)
+        val intent: Intent = Intent(this, Pracownicy::class.java)
         startActivity(intent)
     }
 
@@ -70,5 +65,4 @@ class MainActivity : AppCompatActivity() {
     fun onExitButtonClick(view: View) {
         finish()
     }
-}
 }

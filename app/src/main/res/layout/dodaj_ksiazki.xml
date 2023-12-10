@@ -1,11 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/jtocal"
+    android:id="@+id/dodaj_ksiazki"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5"
     android:orientation="vertical"
     android:padding="16dp">
+
+    <EditText
+        android:id="@+id/nazwa"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Wprowadź nazwę książki"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/autor"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Wprowadź imię i nazwisko autora"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/wydawnictwo"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Wprowadź wydawnictwo"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/ilosc_stron"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Wprowadź ilość stron"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/myCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dodaj do wszystkich placówek" />
+
+    <Button
+        android:id="@+id/wyslij"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Dodaj książkę"
+        android:onClick="onClickWyslij"/>
 
     <Button
         android:id="@+id/myButton2"
@@ -14,5 +69,6 @@
         android:layout_marginBottom="20dp"
         android:text="Wróć"
         android:onClick="wroc"/>
+
 
 </LinearLayout>

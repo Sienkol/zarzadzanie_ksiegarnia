@@ -16,11 +16,11 @@
         android:layout_marginBottom="32dp" />
 
     <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="376dp"
+        android:layout_height="580dp"
         android:layout_below="@id/titleTextView"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="105dp"
+        android:layout_marginBottom="71dp"
         android:columnCount="1"
         android:rowCount="6">
 

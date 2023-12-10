@@ -28,4 +28,4 @@ kluczowe elementy kodu źródłowego.
 -CHECK BOX
 -TEXT INPUT
 -SLIDER
--
+-lista rozwijana
