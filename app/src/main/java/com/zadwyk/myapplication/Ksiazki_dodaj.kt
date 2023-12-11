@@ -22,6 +22,7 @@ class Ksiazki_dodaj : AppCompatActivity() {
     private lateinit var spinner: Spinner
     private lateinit var myCheckBox: CheckBox
     private lateinit var db: FirebaseFirestore
+    var inne = mutableListOf<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +52,7 @@ class Ksiazki_dodaj : AppCompatActivity() {
                 }
 
                 // Wypełnienie spinnera pobranymi danymi
+                inne = spinnerData
                 val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, spinnerData)
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 spinner.adapter = adapter
@@ -74,23 +76,27 @@ class Ksiazki_dodaj : AppCompatActivity() {
         )
 
         // Dodanie dokumentu do wybranej kolekcji
-        db.collection(ksiegarnia)
-            .add(nazwa)
+        db.collection("/ksiegarnie" )
+            .document(ksiegarnia)
+            .collection("książki")
+            .document(nazwa)
+            .set(newDocument)
             .addOnSuccessListener {
-                // Obsługa sukcesu dodawania do wybranej kolekcji
-
-                db.collection("ksiegarnia").add(newDocument)
                 // Jeżeli checkbox jest zaznaczony, dodaj do wszystkich kolekcji
                 if (myCheckBox.isChecked) {
-                    db.collection("kolekcja2").add(newDocument)
-                    db.collection("kolekcja3").add(newDocument)
-                        .addOnSuccessListener {
-                            // Obsługa sukcesu dodawania do wszystkich kolekcji
-                        }
-                        .addOnFailureListener { exception ->
-                            // Obsługa błędów dodawania do wszystkich kolekcji
-                        }
+                    for (i in inne) {
+                        db.collection("/ksiegarnie")
+                            .document(i)
+                            .collection("książki")
+                            .document(nazwa).set(newDocument)
+                    }
+                } else {
+                    db.collection("/ksiegarnie")
+                        .document(ksiegarnia)
+                        .collection("książki")
+                        .document(nazwa).set(newDocument)
                 }
+
             }
             .addOnFailureListener { exception ->
                 // Obsługa błędów dodawania do wybranej kolekcji
