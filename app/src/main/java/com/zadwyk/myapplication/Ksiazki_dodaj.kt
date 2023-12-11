@@ -60,6 +60,12 @@ class Ksiazki_dodaj : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 // Obsługa błędów pobierania danych z Firestore
             }
+
+        val powrot2: android.widget.Button = findViewById(R.id.myButton2)
+        powrot2.setOnClickListener {
+            val intent: Intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
     fun onClickWyslij(view: View) {
         val nazwa = Nazwa.text.toString()

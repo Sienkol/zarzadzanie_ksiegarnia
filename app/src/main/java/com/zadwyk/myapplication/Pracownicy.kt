@@ -15,6 +15,7 @@ class Pracownicy : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.zatrudnieni)
+
         val powrot2: android.widget.Button = findViewById(R.id.myButton2)
         powrot2.setOnClickListener {
             val intent: Intent = Intent(this, MainActivity::class.java)
