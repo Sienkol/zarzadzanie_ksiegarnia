@@ -15,14 +15,18 @@ import android.widget.TextView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.FirebaseApp
 class Ksiazki_usun : AppCompatActivity() {
-    private lateinit var mainView: View
     private lateinit var db: FirebaseFirestore
     private lateinit var spinner: Spinner
     var spinnerData = mutableListOf<String>()
+    private lateinit var myApp: MyApplication
+    private lateinit var mainView: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.usun_ksiazki)
+        mainView = findViewById(R.id.usun_ksiazki)
+        myApp = application as MyApplication
+        mainView.setBackgroundColor(myApp.backgroundColor)
 
 
 

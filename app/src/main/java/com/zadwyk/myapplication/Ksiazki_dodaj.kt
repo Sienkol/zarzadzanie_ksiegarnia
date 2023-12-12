@@ -23,10 +23,15 @@ class Ksiazki_dodaj : AppCompatActivity() {
     private lateinit var myCheckBox: CheckBox
     private lateinit var db: FirebaseFirestore
     var inne = mutableListOf<String>()
+    private lateinit var myApp: MyApplication
+    private lateinit var mainView: View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dodaj_ksiazki)
+        mainView = findViewById(R.id.dodaj_ksiazki)
+        myApp = application as MyApplication
+        mainView.setBackgroundColor(myApp.backgroundColor)
 
         // Inicjalizacja elementów interfejsu użytkownika
         Nazwa = findViewById(R.id.nazwa)

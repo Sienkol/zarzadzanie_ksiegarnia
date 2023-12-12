@@ -20,13 +20,6 @@
             android:layout_weight="1"
             android:text="Wróć" />
 
-        <Button
-            android:id="@+id/tło"
-            android:onClick="onColorChangeButtonClick"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:text="Zmień kolor tła" />
     </LinearLayout>
 
     <TextView
@@ -57,13 +50,20 @@
         android:layout_height="wrap_content"
         android:text="JAK KORZYSTAĆ Z APLIKACJI:"
         android:textSize="28sp" />
+
     <TextView
 
         android:id="@+id/textView6"
         android:layout_width="match_parent"
-        android:layout_height="388dp"
-        android:text="Należy klinąć w odpowiednie okno do przeliczania wartości. Tam mamy pole do wpisania wartości którą chcemy przeliczyć z jednej jednostki na drugą. Aby uzyskać wynik klikamy przycisk oblicz. W przypadku gdy chcemy odwrotnie przeliczyć wartość, klikamy przycisk zmień."
+        android:layout_height="wrap_content"
+        android:text="W zależności od czego chcemy zrobić klikamy odpowiednie przyciski. W odpowiednie okna wpisujemy
+        dane. Gdy chcemy odświeżyć widok w aktywności usuwania książek, musimy wrócić do menu głównego i wejść jeszcze raz."
         android:textSize="24sp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/zdjecie" />
 
 
 </LinearLayout>
