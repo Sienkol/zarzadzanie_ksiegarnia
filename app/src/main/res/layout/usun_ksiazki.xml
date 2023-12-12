@@ -10,7 +10,8 @@
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="36dp"
+        android:layout_marginBottom="20dp" />
 
     <Button
         android:id="@+id/show"
@@ -19,6 +20,22 @@
         android:layout_marginBottom="20dp"
         android:text="Pokaż książki"
         android:onClick="onClickShow"/>
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Usuń książki"
+        android:onClick="onClickDelete"/>
+
+    <Button
+        android:id="@+id/move"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Wyślij książkę do innej księgarni"
+        android:onClick="onClickMove"/>
 
     <Button
         android:id="@+id/myButton2"

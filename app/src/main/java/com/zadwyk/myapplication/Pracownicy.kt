@@ -22,30 +22,47 @@ class Pracownicy : AppCompatActivity() {
             startActivity(intent)
         }
     }
-    /*class BooksAdapter(context: Context, private val books: List<String>) :
-        ArrayAdapter<String>(context, R.layout.zatrudnieni, books) {
 
-        // Metoda getView() definiuje sposób, w jaki dane mają być wyświetlane w widoku
-        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-            var listItemView = convertView
+    fun onClickWyslij(view: View) {
+        val nazwa = Nazwa.text.toString()
+        val ilosc_stron = Ilosc_stron.text.toString()
+        val autor = Autor.text.toString()
+        val wydawnictwo = Wydawnictwo.text.toString()
+        val ksiegarnia = spinner.selectedItem.toString()
 
-            // Sprawdzamy, czy istniejący widok jest używany, jeśli nie, tworzymy nowy
-            if (listItemView == null) {
-                listItemView = LayoutInflater.from(context).inflate(R.layout.zatrudnieni, parent, false)
+        // Tworzenie dokumentu z danymi
+        val newDocument = hashMapOf(
+            "autor" to autor,
+            "ilość stron" to ilosc_stron,
+            "wydawnictwo" to wydawnictwo
+        )
+
+        // Dodanie dokumentu do wybranej kolekcji
+        db.collection("/ksiegarnie" )
+            .document(ksiegarnia)
+            .collection("książki")
+            .document(nazwa)
+            .set(newDocument)
+            .addOnSuccessListener {
+                // Jeżeli checkbox jest zaznaczony, dodaj do wszystkich kolekcji
+                if (myCheckBox.isChecked) {
+                    for (i in inne) {
+                        db.collection("/ksiegarnie")
+                            .document(i)
+                            .collection("książki")
+                            .document(nazwa).set(newDocument)
+                    }
+                } else {
+                    db.collection("/ksiegarnie")
+                        .document(ksiegarnia)
+                        .collection("książki")
+                        .document(nazwa).set(newDocument)
+                }
+
             }
-
-            // Pobieramy dane z listy książek dla danego indeksu
-            val currentBook = books[position]
-
-            // Pobieramy referencje do TextView w układzie listy (list_item_book.xml)
-            val bookTextView = listItemView?.findViewById<TextView>(R.id.bookTextView)
-
-            // Ustawiamy tekst w TextView na tytuł aktualnej książki
-            bookTextView?.text = currentBook
-
-            // Zwracamy widok zawierający dane
-            return listItemView!!
-        }
-    }*/
+            .addOnFailureListener { exception ->
+                // Obsługa błędów dodawania do wybranej kolekcji
+            }
+    }
 
 }

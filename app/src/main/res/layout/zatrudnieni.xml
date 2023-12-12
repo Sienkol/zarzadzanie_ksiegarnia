@@ -1,28 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/zatrudnieni"
+    android:id="@+id/dodaj_ksiazki"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/bookTextView"
+    <EditText
+        android:id="@+id/autor"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Imię"
+        android:inputType="text"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <EditText
+        android:id="@+id/wydawnictwo"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Nazwisko"
+        android:inputType="text"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="416dp" />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/wyslij"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
-        android:background="@android:color/white"
-        android:gravity="center_vertical"/>
+        android:layout_marginBottom="10dp"
+        android:text="Dodaj pracownika"
+        android:onClick="onClickWyslij"/>
 
     <Button
         android:id="@+id/myButton2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:text="Wróć"
         android:onClick="wroc"/>
+
 
 </LinearLayout>
